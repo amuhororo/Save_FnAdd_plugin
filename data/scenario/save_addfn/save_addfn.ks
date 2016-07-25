@@ -17,7 +17,7 @@
 ;
 ; ＜使い方＞
 ;  　最初にsave_addfn.ksファイルを読み込んでください。
-;  　[call storage="save_save_addfn/save_save_addfn.ks"]
+;  　[call storage="save_addfn/save_addfn.ks"]
 ;
 ;　　save.html、load.html ファイルは、デフォルトの tyrano/html/ 内ではなく、
 ;　　data/other/save_addfn/ のものを使用してください。
@@ -65,7 +65,7 @@ var save_conf = {
 
 };
 if(save_conf.style == "default") save_conf.style = "";
-var style = '<link rel="stylesheet" href="./data/others/save_addfn/save_config' + save_conf.style + '.css">';
+var style = '<link rel="stylesheet" href="./data/others/save_addfn/save_style' + save_conf.style + '.css">';
 if(save_conf.style != "none")$('head link:last').after(style);
 if(save_conf.ngalert)$('head script:last').after('<script type="text/javascript" src="./data/others/save_addfn/libs.js"></script>');
 sf.save_conf = save_conf;
