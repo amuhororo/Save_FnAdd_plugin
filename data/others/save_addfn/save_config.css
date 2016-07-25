@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+.menu_item.menu_close {
+	margin-top:15px;
+}
+.menu_item.menu_close img {
+	width: 64px;
+    height: 64px;
+	max-width: 64px;
+    max-height: 64px;
+}
+.save_area {
+}
+.savepage .save_list {
+	display:block;
+}
+.save_list_item {
+	border-bottom:1px solid #ccc;
+	margin:0;
+	display:flex;
+	align-items: center;
+	width:100%;
+	box-sizing:border-box;
+}
+.save_display_area {
+	display:flex;
+	flex:2;
+	text-align:center;
+}
+.save_list_item_thumb {
+	width:120px;
+	min-height:68px;
+	border-bottom:none;
+}
+.save_list_item_thumb img {
+	width:100%;
+	height:auto;
+	vertical-align:bottom;
+}
+.save_list_item_area {
+	width: 100%;
+	border-bottom:none;
+	display:block;
+	padding:0.3em 1em;
+}
+.save_list_item_date {
+	margin-bottom:0.5em;
+}
+.save_list_item_date .data_num {
+	margin-right:1.5em;
+}
+.save_list_item_date .none {
+	color:#999;
+}
+.save_list_item_text {
+	height:auto;
+}
+
+/** 保護・削除ボタン **/
+.save_config_area {
+	text-align:right;
+	padding-right:0.7em;
+}
+.save_config_area .config {
+	margin:5px 0;
+	padding:3px;
+	border:1px solid #ccc;
+}
+.save_config_area .config span {
+}
+.save_config_area .config img {
+	margin-right:3px;
+	width:1em;
+	height:1em;
+	vertical-align:bottom;
+}
+
+
+/***** ナビ ******/
+.nav {
+	position:absolute;
+	display:flex;
+	top:48px;
+	left:8px;
+}
+.nav li {
+	margin:3px;
+	border:1px solid #ccc;
+	font-size:14px;
+	
+}
+.nav li a {
+	width:16px;
+	text-decoration:none;
+	display:block;
+	color:#333;
+	padding:5px;	
+}
+.nav li a:hover {
+	background-color:#9CF;
+}
+.nav li a.now {
+	background-color: #F9C;
+}
