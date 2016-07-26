@@ -7,6 +7,7 @@ by hororo http://hororo.wp.xdomain.jp/
   セーブ回りの機能を追加するプラグインです。  
     ・セーブ用キャプチャ画像をjpeg圧縮する。圧縮率も指定できます。  
     ・セーブ画面に「保護」「削除」ボタンが付きます。  
+    ・セーブ失敗・成功時にアラートを出すか選択できます。  
     ・指定件数ごとにページ分けができます。
     ・サンプルCSSを何種類か用意しました。  
   
@@ -15,7 +16,7 @@ by hororo http://hororo.wp.xdomain.jp/
   
 ＜使い方＞  
   最初にsave_addfn.ksファイルを読み込んでください。  
-  [call storage="save_save_addfn/save_save_addfn.ks"]  
+  [call storage="save_addfn/save_addfn.ks"]  
   
   save.html、load.html ファイルは、デフォルトの tyrano/html/ 内ではなく、  
   data/other/save_addfn/ のものを使用してください。  
