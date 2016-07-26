@@ -178,11 +178,11 @@ tyrano.plugin.kag.menu.doSave = function(num) {
 			var text = $('.message_inner p').find('span').map(function(){
 				return $(this).html()
 			}).get().join('')
-			console.log(text);			
+			//console.log(text);			
 			if (text.indexOf('<br>') != -1) {
 				message = text.split("<br>");
 				data.title = message[message.length-1];
-				console.log(message[message.length-1]);
+				//console.log(message[message.length-1]);
 			}else{
 				data.title = text;
 			};
