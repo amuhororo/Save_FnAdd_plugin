@@ -112,16 +112,6 @@ tyrano.plugin.kag.menu.displaySave = function() {
 			});
 		});
 		
-		//◆閉じるボタン
-		j_save.find(".menu_close").each(function() {
-			$(this).click(function() {
-				layer_menu.hide();
-				if (that.kag.stat.visible_menu_button == true) {
-					$(".button_menu").show();
-				}
-			});
-		});
-
 		var layer_menu = that.kag.layer.getMenuLayer();
 		that.setMenu(j_save);
 		
@@ -161,16 +151,13 @@ tyrano.plugin.kag.menu.doSaveProtect = function(num) {
 	var that = this;
 
 	if(save_num.protect == null){
-		save_num.protect = "true";		
+		save_num.protect = "true";
 	}else {
 		save_num.protect = null;
 	};
 	
 	$.setStorage(that.kag.config.projectID + "_tyrano_data", array_save, that.kag.config.configSave);
 	
-	
-	//var layer_menu = that.kag.layer.getMenuLayer();
-	//layer_menu.empty();
 	//that.displaySave();
 };
 
@@ -247,8 +234,8 @@ tyrano.plugin.kag.menu.displayLoad = function() {
 				that.loadGame(num);
 	
 				var layer_menu = that.kag.layer.getMenuLayer();
-				//layer_menu.hide();
-				//layer_menu.empty();
+				layer_menu.hide();
+				layer_menu.empty();
 				if (that.kag.stat.visible_menu_button == true) {
 					$(".button_menu").show();
 				}
@@ -284,26 +271,13 @@ tyrano.plugin.kag.menu.displayLoad = function() {
 		});
 
 		var layer_menu = that.kag.layer.getMenuLayer();
-
-		//◆閉じるボタン
-		j_save.find(".menu_close").each(function() {
-			$(this).click(function() {
-				layer_menu.hide();
-				if (that.kag.stat.visible_menu_button == true) {
-					$(".button_menu").show();
-				}
-			});
-		});
-
 		that.setMenu(j_save);
 
-
 		//◆ページ分け
-		
 		that.SaveList();
 	});
 };
-	
+
 
 //◆ページ分け
 tyrano.plugin.kag.menu.SaveList = function() {
