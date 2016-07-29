@@ -1,4 +1,4 @@
-;【セーブ機能追加プラグイン Ver.1.01】2016/7/28
+;【セーブ機能追加プラグイン Ver.1.02】2016/7/30
 ; by hororo http://hororo.wp.xdomain.jp/
 ;
 ; ＜機能＞
@@ -37,7 +37,7 @@ var save_conf = {
 //■ 設定 ■
 // ◆ サムネイル画像のフォーマット。"jpeg" or "webp" 使わない場合は"none"。 
 //　　※webpはGoogleChrome、Windows版のみ対応です。
-"format" : "jpeg"
+"format" : "none"
 ,
 // ◆ サムネイル画像の圧縮率(0.0～1.0) 小さいほど画像が軽く粗くなります。
 "quality" : 0.7
@@ -51,7 +51,7 @@ var save_conf = {
 ,
 // ◆ セーブを数件毎にページ分けする場合は true 分けない場合は false
 //　　※セーブ件数変更は、製作wiki等を参照してください。
-"pagefeed" : false
+"pagefeed" : true
 ,
 // ◆ 1ページ当たりの表示件数。半角数値。"auto"で自動ページ送り。
 //　　※"auto"は、CSSの指定によっては期待通りの動作になりません。
@@ -71,14 +71,13 @@ var save_conf = {
 if(save_conf.style == "default") save_conf.style = "";
 var style = '<link rel="stylesheet" href="./data/others/save_addfn/save_style' + save_conf.style + '.css">';
 if(save_conf.style != "none")$('head link:last').after(style);
-if(save_conf.ngalert)$('head script:last').after('<script type="text/javascript" src="./data/others/save_addfn/libs.js"></script>');
 sf.save_conf = save_conf;
 [endscript]
 
 [loadjs storage="save_addfn/save_addfn.js"]
-[if exp="sf.save_conf['format']!='none'"]
-[loadjs storage="save_addfn/thumb_saving.js"]
-[endif]
+[if exp="sf.save_conf['ngalert']==true"][loadjs storage="save_addfn/libs.js"][endif]
+[if exp="sf.save_conf['format']!='none'"][loadjs storage="save_addfn/thumb_saving.js"][endif]
+
 [preload storage="data/image/save_addfn/save_protect_on.png"]
 [preload storage="data/image/save_addfn/save_protect_off.png"]
 [preload storage="data/image/save_addfn/save_delete.png"]
