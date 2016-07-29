@@ -37,7 +37,7 @@ var save_conf = {
 //■ 設定 ■
 // ◆ サムネイル画像のフォーマット。"jpeg" or "webp" 使わない場合は"none"。 
 //　　※webpはGoogleChrome、Windows版のみ対応です。
-"format" : "none"
+"format" : "jpeg"
 ,
 // ◆ サムネイル画像の圧縮率(0.0～1.0) 小さいほど画像が軽く粗くなります。
 "quality" : 0.7
@@ -51,7 +51,7 @@ var save_conf = {
 ,
 // ◆ セーブを数件毎にページ分けする場合は true 分けない場合は false
 //　　※セーブ件数変更は、製作wiki等を参照してください。
-"pagefeed" : true
+"pagefeed" : false
 ,
 // ◆ 1ページ当たりの表示件数。半角数値。"auto"で自動ページ送り。
 //　　※"auto"は、CSSの指定によっては期待通りの動作になりません。
