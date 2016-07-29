@@ -194,7 +194,7 @@ tyrano.plugin.kag.menu.doSave = function(num) {
 			$.setStorage(that.kag.config.projectID + "_tyrano_data", array_save, that.kag.config.configSave);
 			
 			//◆セーブ成功時のアラート
-			if(save_conf.check)alertify.alert( "No." + (parseInt(num) + 1) + " にセーブしました。", function () {});
+			if(save_conf.okalert)alertify.alert( "No." + (parseInt(num) + 1) + " にセーブしました。", function () {});
 		});
 	}
 };
