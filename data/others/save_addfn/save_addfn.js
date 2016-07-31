@@ -4,7 +4,7 @@ tyrano.plugin.kag.html = function(html_file_name,data,callback){
 	data = (data || {});
 	
 	//◆追加開始 ディレクトリを変数に。
-	if(html_file_name == "save" || html_file_name == "load" || html_file_name == "menu" || html_file_name == "log") var htmldir = "./tyrano/html/";
+	if(html_file_name == "save" || html_file_name == "load" || html_file_name == "menu" || html_file_name == "backlog") var htmldir = "./tyrano/html/";
 	else var htmldir = "./data/others/";
 	//◆追加ここまで
 	
