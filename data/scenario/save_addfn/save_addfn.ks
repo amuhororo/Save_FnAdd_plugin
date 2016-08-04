@@ -1,4 +1,4 @@
-;【セーブ機能追加プラグイン Ver.1.03】2016/7/31
+;【セーブ機能追加プラグイン Ver.1.04】2016/8/4
 ; by hororo http://hororo.wp.xdomain.jp/
 ;
 ; ＜機能＞
@@ -54,7 +54,7 @@ var save_conf = {
 "pagefeed" : false
 ,
 // ◆ 1ページ当たりの表示件数。半角数値。"auto"で自動ページ送り。
-//　　※"auto"は、CSSの指定によっては期待通りの動作になりません。
+//　　※"auto"を使う場合は、save_list_item 及び menu_close の height 値を指定した方がいいです。
 "pagenum" : 5
 ,
 // ◆ スタイル。背景、色合いはデフォルトです。変更の参考にでも。
