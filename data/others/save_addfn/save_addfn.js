@@ -112,8 +112,28 @@ tyrano.plugin.kag.menu.displaySave = function() {
 			});
 		});
 		
-		var layer_menu = that.kag.layer.getMenuLayer();
-		that.setMenu(j_save);
+		//閉じる
+		j_save.find(".menu_close").each(function() {
+			$(this).click(function(e) {
+				layer_menu.hide();
+				layer_menu.empty();
+				if (that.kag.stat.visible_menu_button == true) {
+					$(".button_menu").show();
+				}
+			});
+		});
+
+		layer_menu.append(j_save);
+		layer_menu.show();
+		
+		//◆メニューを後ろへ
+		if(layer_menu.find('div').hasClass("display_menu")){
+			layer_menu.find(".display_menu").css("z-index","-1");//メニュー項目は消しちゃう
+			layer_menu.children("img").css("z-index","-1");//背景画像は後ろに移動
+		}
+
+		//var layer_menu = that.kag.layer.getMenuLayer();
+		//that.setMenu(j_save);
 		
 		//◆ページ分け
 		that.SaveList();
@@ -139,6 +159,8 @@ tyrano.plugin.kag.menu.doSaveDelete = function(num) {
 	
 	$.setStorage(that.kag.config.projectID + "_tyrano_data", array_save, that.kag.config.configSave);
 	
+	var layer_menu = that.kag.layer.getMenuLayer();
+	layer_menu.empty();
 	//that.displaySave();
 };
 
@@ -158,6 +180,8 @@ tyrano.plugin.kag.menu.doSaveProtect = function(num) {
 	
 	$.setStorage(that.kag.config.projectID + "_tyrano_data", array_save, that.kag.config.configSave);
 	
+	var layer_menu = that.kag.layer.getMenuLayer();
+	layer_menu.empty();
 	//that.displaySave();
 };
 
@@ -269,9 +293,28 @@ tyrano.plugin.kag.menu.displayLoad = function() {
 				}
 			});
 		});
+		//閉じる
+		j_save.find(".menu_close").each(function() {
+			$(this).click(function(e) {
+				layer_menu.hide();
+				layer_menu.empty();
+				if (that.kag.stat.visible_menu_button == true) {
+					$(".button_menu").show();
+				}
+			});
+		});
 
-		var layer_menu = that.kag.layer.getMenuLayer();
-		that.setMenu(j_save);
+		layer_menu.append(j_save);
+		layer_menu.show();
+		
+		//◆メニューを後ろへ
+		if(layer_menu.find('div').hasClass("display_menu")){
+			layer_menu.find(".display_menu").css("z-index","-1");//メニュー項目は消しちゃう
+			layer_menu.children("img").css("z-index","-1");//背景画像は後ろに移動
+		}
+		
+		//var layer_menu = that.kag.layer.getMenuLayer();
+		//that.setMenu(j_save);
 
 		//◆ページ分け
 		that.SaveList();
@@ -289,9 +332,9 @@ tyrano.plugin.kag.menu.SaveList = function() {
 	if(save_conf.pagefeed){
 		
 		if(save_conf.pagenum == "auto"){
-			var height_size = parseInt(that.kag.config.scHeight) - parseInt($(".menu_close").outerHeight());
+			var height_size = parseInt(that.kag.config.scHeight) - parseInt($(".menu_close").outerHeight(true));
 			var count_w = Math.floor(parseInt($(".save_area").width()) / parseInt($(".save_area").children("li").outerWidth(true)));
-			var count_h = Math.floor(height_size / parseInt($(".save_area").children("li").outerHeight()));
+			var count_h = Math.floor(height_size / parseInt($(".save_area").children("li").outerHeight(true)));
 			var list = parseInt(count_w) * parseInt(count_h);
 		} else {
 			var list = save_conf.pagenum;

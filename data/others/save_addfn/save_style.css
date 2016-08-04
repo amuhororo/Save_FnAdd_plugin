@@ -1,19 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
 
-.menu_item.menu_close {
-	margin-top:15px;
-}
-.menu_item.menu_close img {
-	width: 64px;
-    height: 64px;
-	max-width: 64px;
-    max-height: 64px;
-}
 .save_area {
+	background-size:cover;
+	width:100%;
+	height:100%;
 }
-.save_area .save_list {
+.save_area .menu_close {
+	height:54px;
+}
+.save_area .menu_close img {
+	max-height:none;
+}
+
+.save_list {
 	display:block;
+	clear:both;
 }
 .save_list_item {
 	border-bottom:1px solid #ccc;
@@ -21,6 +23,7 @@
 	display:flex;
 	align-items: center;
 	width:100%;
+	height:68px;
 	box-sizing:border-box;
 }
 .save_display_area {
@@ -65,8 +68,8 @@
 }
 .save_config_area .config {
 	display:inline-block;
-	margin:5px 0;
-	padding:3px;
+	margin:3px 0;
+	padding:4px;
 	border:1px solid #ccc;
 	line-height:1em;
 }
@@ -101,8 +104,8 @@
 	padding:5px;	
 }
 .nav li a:hover {
-	background-color:#9CF;
+	background-color:rgba(255,255,255,0.5);
 }
 .nav li a.now {
-	background-color: #F9C;
+	background-color:rgba(153,204,255,0.5);
 }
