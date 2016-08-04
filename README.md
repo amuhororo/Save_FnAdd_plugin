@@ -13,7 +13,7 @@ by hororo http://hororo.wp.xdomain.jp/
     ・[font][ruby]タグなど使用時に、セーブtitleが切れてしまう現象に対応しています。  
   
 ＜動作確認＞ 
-  ティラノスクリプトVer422 で動作確認。  
+  ティラノスクリプトVer423 で動作確認。  
   
 ＜使い方＞  
   最初にsave_addfn.ksファイルを読み込んでください。  
