@@ -1,5 +1,5 @@
 # セーブに機能追加するプラグイン  
-Ver.1.04　2016/8/4
+Ver.1.05　2016/8/9
 
 by hororo http://hororo.wp.xdomain.jp/  
   
