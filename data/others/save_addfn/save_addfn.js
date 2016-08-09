@@ -196,23 +196,29 @@ tyrano.plugin.kag.menu.doSave = function(num) {
 	var data = {};
 	var that = this;
 	
+	//◆data.title 
+	var text = $('.message_inner p').find('span').map(function(){
+		return $(this).html()
+	}).get().join('')
+	//console.log(text);			
+	if (text.indexOf('<br>') != -1) {
+		message = text.split("<br>");
+		text = message[message.length-1];
+		//console.log(message[message.length-1]);
+	}else{
+		text = text;
+	}
+	var title = (text=="") ? this.kag.stat.current_message_str : text;
+	//◆data.title end
+	
 	if (this.snap == null) {
 		//ここはサムネイルイメージ作成のため、callback指定する
-		this.snapSave(this.kag.stat.current_message_str, function() {
+		
+		//◆定義したtitleを指定
+		//this.snapSave(this.kag.stat.current_message_str, function() {
+		this.snapSave(title, function() {
 			//現在、停止中のステータスなら、[_s]ポジションからセーブデータ取得
-			data = that.snap;
-			var text = $('.message_inner p').find('span').map(function(){
-				return $(this).html()
-			}).get().join('')
-			//console.log(text);			
-			if (text.indexOf('<br>') != -1) {
-				message = text.split("<br>");
-				data.title = message[message.length-1];
-				//console.log(message[message.length-1]);
-			}else{
-				data.title = text;
-			};
-			
+			data = that.snap;			
 			data.save_date = $.getNowDate() + "　" + $.getNowTime();
 			array_save.data[num] = data;
 			$.setStorage(that.kag.config.projectID + "_tyrano_data", array_save, that.kag.config.configSave);
